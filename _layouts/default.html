@@ -5,13 +5,7 @@
     <title>{{ page.title }}</title>
   </head>
   <body>
-    <div class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-        </ul>
-      </nav>
-    </div>
+    {% include sidebar.html %}
     <main class="content">
       {{ content }}
     </main>
