@@ -1,4 +1,9 @@
-<nav class="sidebar">
+<button class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<nav class="sidebar" id="sidebar">
   <ul>
     <li><a href="#property-overview">Property Overview</a></li>
     <li><a href="#bedding-configuration">Bedding Configuration</a></li>
@@ -13,3 +18,21 @@
     <li><a href="#troubleshooting">Troubleshooting</a></li>
   </ul>
 </nav>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+  
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    sidebar.classList.toggle('active');
+  });
+  
+  // Close sidebar when a link is clicked
+  const sidebarLinks = sidebar.querySelectorAll('a');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      sidebar.classList.remove('active');
+    });
+  });
+</script>
